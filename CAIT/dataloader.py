@@ -148,40 +148,7 @@ def reader(data_path):
         normal = X[y=='normal.']
         abnormal = X[y!='normal.']        
         
-        # entire_set = np.array(kdd_loader)
-        # revised_pd = pd.DataFrame(entire_set)
-        # revised_pd = pd.concat((revised_pd, pd.get_dummies(revised_pd.iloc[:, 1], prefix='new1')), axis=1)
-        # revised_pd = pd.concat((revised_pd, pd.get_dummies(revised_pd.iloc[:, 2], prefix='new2')), axis=1)
-        # revised_pd = pd.concat((revised_pd, pd.get_dummies(revised_pd.iloc[:, 3], prefix='new3')), axis=1)
-        # revised_pd = pd.concat((revised_pd, pd.get_dummies(revised_pd.iloc[:, 6], prefix='new6')), axis=1)
-        # revised_pd = pd.concat((revised_pd, pd.get_dummies(revised_pd.iloc[:, 11], prefix='new11')), axis=1)
-        # revised_pd = pd.concat((revised_pd, pd.get_dummies(revised_pd.iloc[:, 21], prefix='new21')), axis=1)
-        # revised_pd.drop(revised_pd.columns[[1, 2, 3, 6, 11, 20, 21]], inplace=True, axis=1)
-        # new_columns = [0, 'new1_icmp', 'new1_tcp', 'new1_udp', 'new2_IRC', 'new2_X11', 'new2_Z39_50', 'new2_auth',
-        #             'new2_bgp',
-        #             'new2_courier', 'new2_csnet_ns', 'new2_ctf', 'new2_daytime', 'new2_discard', 'new2_domain',
-        #             'new2_domain_u', 'new2_echo', 'new2_eco_i', 'new2_ecr_i', 'new2_efs', 'new2_exec', 'new2_finger',
-        #             'new2_ftp', 'new2_ftp_data', 'new2_gopher', 'new2_hostnames', 'new2_http', 'new2_http_443',
-        #             'new2_imap4',
-        #             'new2_iso_tsap', 'new2_klogin', 'new2_kshell', 'new2_ldap', 'new2_link', 'new2_login', 'new2_mtp',
-        #             'new2_name', 'new2_netbios_dgm', 'new2_netbios_ns', 'new2_netbios_ssn', 'new2_netstat', 'new2_nnsp',
-        #             'new2_nntp', 'new2_ntp_u', 'new2_other', 'new2_pm_dump', 'new2_pop_2', 'new2_pop_3', 'new2_printer',
-        #             'new2_private', 'new2_red_i', 'new2_remote_job', 'new2_rje', 'new2_shell', 'new2_smtp',
-        #             'new2_sql_net',
-        #             'new2_ssh', 'new2_sunrpc', 'new2_supdup', 'new2_systat', 'new2_telnet', 'new2_tftp_u', 'new2_tim_i',
-        #             'new2_time', 'new2_urh_i', 'new2_urp_i', 'new2_uucp', 'new2_uucp_path', 'new2_vmnet', 'new2_whois',
-        #             'new3_OTH', 'new3_REJ', 'new3_RSTO', 'new3_RSTOS0', 'new3_RSTR', 'new3_S0', 'new3_S1', 'new3_S2',
-        #             'new3_S3', 'new3_SF', 'new3_SH', 4, 5, 'new6_0', 'new6_1', 7, 8, 9, 10, 'new11_0', 'new11_1', 12, 13,
-        #             14,
-        #             15, 16, 17, 18, 19, 'new21_0', 'new21_1', 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,
-        #             35, 36, 37, 38, 39, 40, 41]
-        # revised_pd = revised_pd.reindex(columns=new_columns)
-        # revised_pd.loc[revised_pd[41] != 'normal.', 41] = 0.0
-        # revised_pd.loc[revised_pd[41] == 'normal.', 41] = 1.0
-        # normal = np.array(revised_pd.loc[revised_pd[41] == 0.0], dtype=np.double)
-        # abnormal = np.array(revised_pd.loc[revised_pd[41] == 1.0], dtype=np.double)
-        # abnormal = abnormal[:,:-1]
-        # normal = normal[:,:-1]      
+   
     elif data_path.split('/')[-1] == "kddcup.data_10_percent_corrected_rev.zip":
         zf = zipfile.ZipFile(data_path)
         kdd_loader = pd.read_csv(zf.open('kddcup.data_10_percent_corrected'), delimiter=',')
@@ -218,17 +185,7 @@ def reader(data_path):
         abnormal = X[y==b'Anomaly']
         
     elif data_path.split('/')[-1] == "seismic.arff":
-        # data, meta = io.arff.loadarff(data_path)
-        # data = pd.DataFrame(data)
-        # classes = dataset.iloc[:, -1]
-        # dataset = dataset.iloc[:, :-1]
-        # dataset = pd.get_dummies(dataset.iloc[:, :-1])
-        # dataset = pd.concat((dataset, classes), axis=1)
-        # normal = dataset[dataset.iloc[:, -1] == b'0'].values
-        # abnormal = dataset[dataset.iloc[:, -1] == b'1'].values
-        # normal = normal[:,:-1]
-        # abnormal = abnormal[:,:-1] 
-               
+
         data, _ = io.arff.loadarff(data_path)
        
         data = pd.DataFrame(data)
