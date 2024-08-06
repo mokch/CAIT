@@ -2,7 +2,7 @@ from tokenize import Double
 import torch
 import numpy as np
 import os
-from pretext_task import make_fake_samples_2, make_fake_samples_min, make_fake_samples_max, make_fake_samples_mean, random_corruption
+from pretext_task import random_corruption
 import matplotlib.pyplot as plt
 from loss import Ratio_Loss
 import pandas as pd
