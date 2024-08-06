@@ -1,1 +1,10 @@
 # CAIT
+This repository contains the original PyTorch implementation of the paper 'Corruption-Based Anomaly Detection and Interpretation in Tabular Data'.
+
+## A. Dataset
+1. Download from the following link: [Outlier Detection DataSets (ODDS)](https://odds.cs.stonybrook.edu/)
+2. Place the each dataset file under `./dataset/`.
+3. Run the following script from the working directory:
+```
+python main.py
+```
