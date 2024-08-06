@@ -6,8 +6,6 @@ from pretext_task import random_corruption
 import matplotlib.pyplot as plt
 from loss import Ratio_Loss
 import pandas as pd
-#input = (batch, variables)
-#mask_matrix = (num_masks, variables)
 from sklearn.metrics import classification_report, roc_auc_score
 from model import Pretext_model_v1
 import glob
