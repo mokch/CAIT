@@ -1,7 +1,6 @@
 from train_model import trainer
 import os 
 
-
 data_dir = './datasets'
 save_dir = './result'
 data_split_see = 2024
