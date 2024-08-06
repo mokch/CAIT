@@ -6,5 +6,5 @@ This repository contains the original PyTorch implementation of the paper 'Corru
 2. Place the each dataset file under `./CAIT/datasets/`.
 3. Run the following script from the working directory:
 ```
-python main.py --data_name wine.mat --data_split_seed 2024 --num_corruption 64
+python main.py --data_name wine.mat --num_corruption 64 --data_split_seed 2024 
 ```
