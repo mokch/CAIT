@@ -79,23 +79,7 @@ def get_loader(data_path, batch_size, data_split_seed, test_size, mode):
     else:
         dataloader = DataLoader(dataset=dataset, batch_size=batch_size, shuffle=True, num_workers=0)
         return dataloader, feature_dim
-    
-def ICL_ODDSLoader(data_path, data_split_seed, test_size):
-    
-    normal, abnormal = reader(data_path)
-    train_X_, test_X = train_test_split(normal, test_size=test_size, random_state=data_split_seed)
-    test_X = np.concatenate((test_X, abnormal), axis = 0)
-    test_y = np.concatenate((np.zeros(test_X.shape[0]-abnormal.shape[0]), np.ones(abnormal.shape[0])))
-    
-    std_scaler = StandardScaler()
-    std_scaler.fit(train_X_)
-    train_X_ = std_scaler.transform(train_X_)
-    test_X = std_scaler.transform(test_X)
-
-
-    return train_X_, test_X, test_y
-    
-    
+   
 def reader(data_path):
     
     if data_path.split('/')[-1] == "ecoli.data":
